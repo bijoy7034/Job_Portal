@@ -1,4 +1,4 @@
-import { Avatar, AvatarBadge, Button, Image, Input, useDisclosure } from '@chakra-ui/react';
+import { Avatar, AvatarBadge, Button, Icon, Image, Input, useDisclosure } from '@chakra-ui/react';
 import {
   MDBCard,
   MDBCardBody,
@@ -19,6 +19,7 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react';
+import { EmailIcon, MinusIcon, PhoneIcon } from '@chakra-ui/icons';
 
 const Profile = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -47,13 +48,13 @@ const Profile = () => {
             <Avatar name={item.name} src='https://bit.ly/broken-link'><AvatarBadge boxSize='1.25em' bg='green.500' /></Avatar>
         </div>
         <MDBCardText className='text-secondary'>
-         {item.description}
+         {item.description.substring(0, 140)}...
         </MDBCardText>
       </MDBCardBody>
       <MDBListGroup flush>
-        <MDBListGroupItem>{item.email}</MDBListGroupItem>
-        <MDBListGroupItem>{item.phone}</MDBListGroupItem>
-        <MDBListGroupItem>Alappuzha</MDBListGroupItem>
+        <MDBListGroupItem><EmailIcon marginRight={2}/> {item.email}</MDBListGroupItem>
+        <MDBListGroupItem><PhoneIcon marginRight={2}/> {item.phone}</MDBListGroupItem>
+        <MDBListGroupItem><MinusIcon marginRight={2} />Alappuzha</MDBListGroupItem>
       </MDBListGroup>
       <MDBCardBody>
         <MDBCardLink href='#' onClick={onOpen} className='text-primary fw-bold'>Edit</MDBCardLink>

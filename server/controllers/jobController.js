@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const Job = require("../models/jobModel")
 const jwt = require('jsonwebtoken')
+const userModel = require("../models/userModel")
 
 
 const createJob = async(req,res)=>{
@@ -67,7 +68,7 @@ const getAllJobs = async(req,res)=>{
             if(err) return res.status(403).json({mssg:'Token not valid'})
         req.user = user;
         })
-        const jobs = await Job.find({postedBy:{$ne :req.user.id}}).sort({createdAt : -1})
+        const jobs = await Job.find({postedBy:{$ne :req.user.id},applied : {$nin : req.user.id } }).sort({createdAt : -1})
         if(!jobs){
             res.status(404).json({mssg:"No jobs found"})
         }else{
@@ -122,6 +123,22 @@ const addApplication = async(req,res)=>{
     }
 }
 
+const getApplicants = async(req,res)=>{
+    const {id} = req.params
+    if(!mongoose.Types.ObjectId.isValid(id)){
+            res.status(404).json({mssg :"No record found"})
+        }
+    const applicants = await Job.findOne({_id:id})
+    if(applicants){
+        const applicant = await userModel.find( { _id : { $in : applicants.applied } } );
+        if(applicant){
+            res.status(200).json(applicant)
+        }
+    }else{
+        res.status(400).json({mssg:"Error"})
+    }
+}
+
 
 
 module.exports = {
@@ -130,5 +147,6 @@ module.exports = {
     getJobsId,
     deleteJob,
     updateJob,
-    addApplication
+    addApplication,
+    getApplicants
 }

@@ -28,7 +28,7 @@ const Filter = () => {
          <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Flexible' />
          <br/>
           <span className='text-secondary mb-2'><b>Salary</b></span>
-          <RangeSlider marginTop='3' aria-label={['min', 'max']} defaultValue={[10, 30]}>
+          <RangeSlider marginTop='3' aria-label={['min', 'max']} defaultValue={[10, 60]}>
   <RangeSliderTrack>
     <RangeSliderFilledTrack />
   </RangeSliderTrack>

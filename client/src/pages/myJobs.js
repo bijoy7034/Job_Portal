@@ -1,6 +1,7 @@
 import { MDBBtn, MDBCol, MDBContainer, MDBIcon, MDBInput, MDBInputGroup, MDBRow, MDBTextArea } from "mdb-react-ui-kit";
 import NavBar from "../components/navBar";
 import { AddIcon, RepeatIcon } from '@chakra-ui/icons'
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import {
   Table,
   Thead,
@@ -28,6 +29,7 @@ import {
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from "react";
 import Footer from "../components/footer";
+import Applicants from "../components/applicants";
 const MyJobs = () => {
      const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -112,13 +114,16 @@ const MyJobs = () => {
             <br/>
             <br/>
             <MDBContainer className="mt-5">
-                <div className="mt-5 d-flex justify-content-between align-items-center">
-                    <h2 className="text-primary">MY JOBS</h2>
-                    <MDBBtn onClick={onOpen}>ADD</MDBBtn>
-                </div>
+              <Tabs variant='enclosed'>
+  <TabList>
+    <Tab>My Jobs</Tab>
+    <Tab>Applied Jobs</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
                 <TableContainer className="mt-3">
                 <Table variant='simple'>
-                    <TableCaption>Jobs Added BY You</TableCaption>
+                    <TableCaption> <MDBBtn className="ml-3" size="sm" rounded onClick={onOpen}>ADD JOBS</MDBBtn></TableCaption>
                     <Thead>
                     <Tr>
                     <Th>Title</Th>
@@ -139,7 +144,7 @@ const MyJobs = () => {
             <MDBBtn className="m-2" rounded color="danger" size="sm"><MDBIcon fas icon="trash" /></MDBBtn>
             <MDBBtn rounded className="m-2" color="secondary" size="sm"><MDBIcon far icon="edit" /></MDBBtn>
             <MDBBtn rounded className="m-2" color="primary" size="sm"><MDBIcon far icon="eye" /></MDBBtn>
-             <MDBBtn rounded className="m-2" color="secondary" size="sm"><MDBIcon far icon="clipboard" /></MDBBtn>
+             <Applicants el_id = {job._id}/>
         </Td>
       </Tr>
     
@@ -147,6 +152,20 @@ const MyJobs = () => {
     </Tbody>
   </Table>
 </TableContainer>
+    </TabPanel>
+    <TabPanel>
+      <p>two!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+
+
+
+
+
+
+
+                
             </MDBContainer>
 
 <br/><br/><br/>
