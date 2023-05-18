@@ -60,6 +60,8 @@ const MyJobs = () => {
   const [time, setTime] = useState()
 
 
+
+
   const inputData = {title,description,requirements,location,salary,time,nature}
   const handleJobAdd= async(e)=>{
         e.preventDefault()
@@ -108,6 +110,26 @@ const MyJobs = () => {
     fetchJobsById()
   }, [loader1])
 
+
+  const handleDelete= async(id)=>{
+    const res = await fetch('/api/job/delete/'+ id, {
+      method:'DELETE'
+    })
+    if(res.ok){
+      var i = loader1 +1
+      setLoad1(i)
+      toast({
+                    title: 'Job Deleted',
+                    description: "Job will be visible to all other users",
+                    status: 'info',
+                    duration: 2000,
+                    isClosable: true,
+        })
+    }else{
+      alert("Error Occured")
+    }
+  }
+
     return ( 
         <div>
             <NavBar/>
@@ -141,7 +163,7 @@ const MyJobs = () => {
         <Td>{job.createdAt.slice(0, 10)}</Td>
         
         <Td>
-            <MDBBtn className="m-2" rounded color="danger" size="sm"><MDBIcon fas icon="trash" /></MDBBtn>
+            <MDBBtn className="m-2" rounded color="danger" onClick={()=>{handleDelete(job._id)}} size="sm"><MDBIcon fas icon="trash" /></MDBBtn>
             <MDBBtn rounded className="m-2" color="secondary" size="sm"><MDBIcon far icon="edit" /></MDBBtn>
             <MDBBtn rounded className="m-2" color="primary" size="sm"><MDBIcon far icon="eye" /></MDBBtn>
              <Applicants el_id = {job._id}/>
@@ -154,7 +176,7 @@ const MyJobs = () => {
 </TableContainer>
     </TabPanel>
     <TabPanel>
-      <p>two!</p>
+      <p>Under Development</p>
     </TabPanel>
   </TabPanels>
 </Tabs>

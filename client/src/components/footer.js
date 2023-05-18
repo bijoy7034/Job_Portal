@@ -40,8 +40,7 @@ export default function Footer() {
                 <b className='text-primary'><MDBIcon fab icon="connectdevelop" /> CreerLink</b>
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit.
+               An online platform that connects job seekers with employers, facilitating the process of job searching and recruitment.
               </p>
             </MDBCol>
 
@@ -49,22 +48,22 @@ export default function Footer() {
               <h6 className='text-uppercase text-primary fw-bold mb-4'>Products</h6>
               <p>
                 <a href='#!' className='text-reset'>
-                  Angular
+                  Website
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  React
+                  App
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Vue
+                  24/7 Service 
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Laravel
+                  Placement Assist
                 </a>
               </p>
             </MDBCol>
@@ -73,7 +72,7 @@ export default function Footer() {
               <h6 className='text-uppercase fw-bold mb-4 text-primary' >Useful links</h6>
               <p>
                 <a href='#!' className='text-reset'>
-                  Pricing
+                  Home
                 </a>
               </p>
               <p>
@@ -83,7 +82,7 @@ export default function Footer() {
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Orders
+                  About
                 </a>
               </p>
               <p>
@@ -97,17 +96,17 @@ export default function Footer() {
               <h6 className='text-uppercase fw-bold mb-4 text-primary'>Contact</h6>
               <p>
                 <MDBIcon color='secondary' icon='home' className='me-2' />
-                New York, NY 10012, US
+                Electronic City, Banglore
               </p>
               <p>
                 <MDBIcon color='secondary' icon='envelope' className='me-3' />
-                info@example.com
+                bijoyanil74@gmail.com
               </p>
               <p>
-                <MDBIcon color='secondary' icon='phone' className='me-3' /> + 01 234 567 88
+                <MDBIcon color='secondary' icon='phone' className='me-3' /> +91 9876567823
               </p>
               <p>
-                <MDBIcon color='secondary' icon='print' className='me-3' /> + 01 234 567 89
+                <MDBIcon color='secondary' icon='print' className='me-3' /> + 0563 2243632
               </p>
             </MDBCol>
           </MDBRow>
@@ -116,7 +115,7 @@ export default function Footer() {
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2023 Copyright:
-        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
+        <a className='text-reset fw-bold'>
           bijoyanil74
         </a>
       </div>
