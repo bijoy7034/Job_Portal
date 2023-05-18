@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+*{
+    font-family: Quicksand;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.loginBox{
+    margin-top: 7%;
+    min-width: 30%;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginBox h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #3B71CA;
+    font-weight:500;
+}
+.wrapper2 {
+    margin-top: 30px;
+    overflow-y: scroll;
+    height: 130vh;
+}
+.wrapper2::-webkit-scrollbar {
+    display: none;
+}
+.profile{
+    position: fixed;
+    margin-top: 30px;
+    width: 350px;
+} 
+.filter {
+    width: 260px;
+    margin-top: 30px;
+}
+.image{
+    width: 100px;
+}
+.jobs{
+    min-width: 600px;
+    max-width:600px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.wrapper3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.cards{
+    margin-bottom: 20px;
+}
+.ac_icons{
+    font-size: xx-large;
+}
+li {
+    margin-top: 0;
+    margin-bottom: 0%;
+    padding: 0%;
+}
+.spinner{
+    justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+    
+}
+.computer {
+    animation: ease-in;
+}
