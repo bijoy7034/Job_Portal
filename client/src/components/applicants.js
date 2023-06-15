@@ -1,10 +1,5 @@
 import {
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
+  Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent,
   DrawerCloseButton,
   Button,
   useDisclosure,
@@ -23,7 +18,7 @@ import React, { useEffect, useState } from 'react';
 
 const Applicants = (props) => {
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
   const [applicants, setApp] = useState([])
 

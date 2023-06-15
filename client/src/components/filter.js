@@ -3,9 +3,7 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardTitle,
-  MDBCardSubTitle,
   MDBCardText,
-  MDBCardLink,
   MDBCheckbox
 } from 'mdb-react-ui-kit';
 import {
